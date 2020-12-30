@@ -1,0 +1,7503 @@
+%!PS-Adobe-2.0
+%%Creator: wxWidgets PostScript renderer
+%%CreationDate: Sat Mar 31 23:10:45 2018
+%%Orientation: Landscape
+%%DocumentPaperSizes: A4
+%%EndComments
+
+%%BeginProlog
+/conicto {
+    /to_y exch def
+    /to_x exch def
+    /conic_cntrl_y exch def
+    /conic_cntrl_x exch def
+    currentpoint
+    /p0_y exch def
+    /p0_x exch def
+    /p1_x p0_x conic_cntrl_x p0_x sub 2 3 div mul add def
+    /p1_y p0_y conic_cntrl_y p0_y sub 2 3 div mul add def
+    /p2_x p1_x to_x p0_x sub 1 3 div mul add def
+    /p2_y p1_y to_y p0_y sub 1 3 div mul add def
+    p1_x p1_y p2_x p2_y to_x to_y curveto
+}  bind def
+/ellipsedict 8 dict def
+ellipsedict /mtrx matrix put
+/ellipse {
+    ellipsedict begin
+    /endangle exch def
+    /startangle exch def
+    /yrad exch def
+    /xrad exch def
+    /y exch def
+    /x exch def
+    /savematrix mtrx currentmatrix def
+    x y translate
+    xrad yrad scale
+    0 0 1 startangle endangle arc
+    savematrix setmatrix
+    end
+    } def
+/ellipticarcdict 8 dict def
+ellipticarcdict /mtrx matrix put
+/ellipticarc
+{ ellipticarcdict begin
+  /do_fill exch def
+  /endangle exch def
+  /startangle exch def
+  /yrad exch def
+  /xrad exch def 
+  /y exch def
+  /x exch def
+  /savematrix mtrx currentmatrix def
+  x y translate
+  xrad yrad scale
+  do_fill { 0 0 moveto } if
+  0 0 1 startangle endangle arc
+  savematrix setmatrix
+  do_fill { fill }{ stroke } ifelse
+  end
+} def
+% define 'colorimage' if it isn't defined
+%   ('colortogray' and 'mergeprocs' come from xwd2ps
+%     via xgrab)
+/colorimage where   % do we know about 'colorimage'?
+  { pop }           % yes: pop off the 'dict' returned
+  {                 % no:  define one
+    /colortogray {  % define an RGB->I function
+      /rgbdata exch store    % call input 'rgbdata'
+      rgbdata length 3 idiv
+      /npixls exch store
+      /rgbindx 0 store
+      0 1 npixls 1 sub {
+        grays exch
+        rgbdata rgbindx       get 20 mul    % Red
+        rgbdata rgbindx 1 add get 32 mul    % Green
+        rgbdata rgbindx 2 add get 12 mul    % Blue
+        add add 64 idiv      % I = .5G + .31R + .18B
+        put
+        /rgbindx rgbindx 3 add store
+      } for
+      grays 0 npixls getinterval
+    } bind def
+
+    % Utility procedure for colorimage operator.
+    % This procedure takes two procedures off the
+    % stack and merges them into a single procedure.
+
+    /mergeprocs { % def
+      dup length
+      3 -1 roll
+      dup
+      length
+      dup
+      5 1 roll
+      3 -1 roll
+      add
+      array cvx
+      dup
+      3 -1 roll
+      0 exch
+      putinterval
+      dup
+      4 2 roll
+      putinterval
+    } bind def
+
+    /colorimage { % def
+      pop pop     % remove 'false 3' operands
+      {colortogray} mergeprocs
+      image
+    } bind def
+  } ifelse          % end of 'false' case
+
+/reencodeISO {
+dup dup findfont dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+/Encoding ISOLatin1Encoding def
+currentdict end definefont
+} def
+/ISOLatin1Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve
+/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut
+/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
+
+/DrawSplineSection {
+    /y3 exch def
+    /x3 exch def
+    /y2 exch def
+    /x2 exch def
+    /y1 exch def
+    /x1 exch def
+    /xa x1 x2 x1 sub 0.666667 mul add def
+    /ya y1 y2 y1 sub 0.666667 mul add def
+    /xb x3 x2 x3 sub 0.666667 mul add def
+    /yb y3 y2 y3 sub 0.666667 mul add def
+    x1 y1 lineto
+    xa ya xb yb x3 y3 curveto
+    } def
+%%EndProlog
+1.000000 setlinewidth
+%%Page: 1
+90 rotate
+1.00000000 1.00000000 scale
+0 -595 translate
+0.283000 setlinewidth
+0.283000 setlinewidth
+newpath
+29 566 moveto
+29 566 lineto
+29 -218 lineto
+1162 -218 lineto
+1162 566 lineto
+closepath
+stroke
+0.283000 setlinewidth
+newpath
+34 561 moveto
+34 561 lineto
+34 -213 lineto
+1157 -213 lineto
+1157 561 lineto
+closepath
+stroke
+0.283000 setlinewidth
+newpath
+191 566 moveto
+191 561 lineto
+stroke
+0.283000 setlinewidth
+newpath
+111 562 moveto
+109 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+109 562 moveto
+109 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+110 562 moveto
+110 566 lineto
+109 565 lineto
+109 565 lineto
+109 565 lineto
+stroke
+0.283000 setlinewidth
+newpath
+109 565 moveto
+109 565 lineto
+stroke
+0.283000 setlinewidth
+newpath
+191 -218 moveto
+191 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+111 -217 moveto
+109 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+109 -217 moveto
+109 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+110 -217 moveto
+110 -213 lineto
+109 -214 lineto
+109 -214 lineto
+109 -214 lineto
+stroke
+0.283000 setlinewidth
+newpath
+109 -214 moveto
+109 -214 lineto
+stroke
+0.283000 setlinewidth
+newpath
+352 566 moveto
+352 561 lineto
+stroke
+0.283000 setlinewidth
+newpath
+270 565 moveto
+271 566 lineto
+271 566 lineto
+272 566 lineto
+272 566 lineto
+272 565 lineto
+273 565 lineto
+273 565 lineto
+272 564 lineto
+270 562 lineto
+273 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+273 562 moveto
+273 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+352 -218 moveto
+352 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+270 -214 moveto
+271 -214 lineto
+271 -213 lineto
+272 -213 lineto
+272 -214 lineto
+272 -214 lineto
+273 -214 lineto
+273 -214 lineto
+272 -215 lineto
+270 -217 lineto
+273 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+273 -217 moveto
+273 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+514 566 moveto
+514 561 lineto
+stroke
+0.283000 setlinewidth
+newpath
+432 566 moveto
+434 566 lineto
+433 564 lineto
+434 564 lineto
+434 564 lineto
+434 564 lineto
+434 564 lineto
+434 563 lineto
+434 563 lineto
+434 562 lineto
+434 562 lineto
+433 562 lineto
+432 562 lineto
+432 563 lineto
+stroke
+0.283000 setlinewidth
+newpath
+432 563 moveto
+432 563 lineto
+stroke
+0.283000 setlinewidth
+newpath
+514 -218 moveto
+514 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+432 -213 moveto
+434 -213 lineto
+433 -215 lineto
+434 -215 lineto
+434 -215 lineto
+434 -215 lineto
+434 -215 lineto
+434 -216 lineto
+434 -217 lineto
+434 -217 lineto
+434 -217 lineto
+433 -217 lineto
+432 -217 lineto
+432 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+432 -217 moveto
+432 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+676 566 moveto
+676 561 lineto
+stroke
+0.283000 setlinewidth
+newpath
+596 565 moveto
+596 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+596 562 moveto
+596 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+595 566 moveto
+594 563 lineto
+596 563 lineto
+stroke
+0.283000 setlinewidth
+newpath
+596 563 moveto
+596 563 lineto
+stroke
+0.283000 setlinewidth
+newpath
+676 -218 moveto
+676 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+596 -215 moveto
+596 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+596 -217 moveto
+596 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+595 -213 moveto
+594 -216 lineto
+596 -216 lineto
+stroke
+0.283000 setlinewidth
+newpath
+596 -216 moveto
+596 -216 lineto
+stroke
+0.283000 setlinewidth
+newpath
+838 566 moveto
+838 561 lineto
+stroke
+0.283000 setlinewidth
+newpath
+758 566 moveto
+756 566 lineto
+756 564 lineto
+756 564 lineto
+756 564 lineto
+757 564 lineto
+758 564 lineto
+758 564 lineto
+758 564 lineto
+758 563 lineto
+758 563 lineto
+758 562 lineto
+757 562 lineto
+756 562 lineto
+756 562 lineto
+756 563 lineto
+stroke
+0.283000 setlinewidth
+newpath
+756 563 moveto
+756 563 lineto
+stroke
+0.283000 setlinewidth
+newpath
+838 -218 moveto
+838 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+758 -213 moveto
+756 -213 lineto
+756 -215 lineto
+756 -215 lineto
+756 -215 lineto
+757 -215 lineto
+758 -215 lineto
+758 -215 lineto
+758 -215 lineto
+758 -216 lineto
+758 -217 lineto
+758 -217 lineto
+757 -217 lineto
+756 -217 lineto
+756 -217 lineto
+756 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+756 -217 moveto
+756 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1000 566 moveto
+1000 561 lineto
+stroke
+0.283000 setlinewidth
+newpath
+919 566 moveto
+919 566 lineto
+918 566 lineto
+918 565 lineto
+918 565 lineto
+918 564 lineto
+918 563 lineto
+918 563 lineto
+918 562 lineto
+918 562 lineto
+919 562 lineto
+919 562 lineto
+920 563 lineto
+920 563 lineto
+920 564 lineto
+920 564 lineto
+919 564 lineto
+919 564 lineto
+918 564 lineto
+918 564 lineto
+918 564 lineto
+918 564 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 564 moveto
+918 564 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1000 -218 moveto
+1000 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+919 -213 moveto
+919 -213 lineto
+918 -214 lineto
+918 -214 lineto
+918 -214 lineto
+918 -215 lineto
+918 -216 lineto
+918 -217 lineto
+918 -217 lineto
+918 -217 lineto
+919 -217 lineto
+919 -217 lineto
+920 -217 lineto
+920 -216 lineto
+920 -215 lineto
+920 -215 lineto
+919 -215 lineto
+919 -215 lineto
+918 -215 lineto
+918 -215 lineto
+918 -215 lineto
+918 -215 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 -215 moveto
+918 -215 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1079 566 moveto
+1082 566 lineto
+1080 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1080 562 moveto
+1080 562 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1079 -213 moveto
+1082 -213 lineto
+1080 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1080 -217 moveto
+1080 -217 lineto
+stroke
+0.283000 setlinewidth
+newpath
+29 409 moveto
+34 409 lineto
+stroke
+0.283000 setlinewidth
+newpath
+30 487 moveto
+32 487 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 487 moveto
+32 487 lineto
+stroke
+0.283000 setlinewidth
+newpath
+30 486 moveto
+31 490 lineto
+33 486 lineto
+stroke
+0.283000 setlinewidth
+newpath
+33 486 moveto
+33 486 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1162 409 moveto
+1157 409 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1158 490 moveto
+1160 490 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 490 moveto
+1160 490 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1158 489 moveto
+1159 492 lineto
+1160 489 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 489 moveto
+1160 489 lineto
+stroke
+0.283000 setlinewidth
+newpath
+29 253 moveto
+34 253 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 331 moveto
+32 331 lineto
+32 331 lineto
+32 331 lineto
+32 330 lineto
+32 330 lineto
+32 330 lineto
+32 330 lineto
+30 330 lineto
+30 333 lineto
+32 333 lineto
+32 333 lineto
+32 333 lineto
+32 332 lineto
+32 332 lineto
+32 332 lineto
+32 332 lineto
+32 331 lineto
+30 331 lineto
+stroke
+0.283000 setlinewidth
+newpath
+30 331 moveto
+30 331 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1162 253 moveto
+1157 253 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1159 334 moveto
+1160 334 lineto
+1160 334 lineto
+1160 333 lineto
+1160 333 lineto
+1160 332 lineto
+1160 332 lineto
+1160 332 lineto
+1158 332 lineto
+1158 336 lineto
+1159 336 lineto
+1160 335 lineto
+1160 335 lineto
+1160 335 lineto
+1160 335 lineto
+1160 334 lineto
+1160 334 lineto
+1159 334 lineto
+1158 334 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1158 334 moveto
+1158 334 lineto
+stroke
+0.283000 setlinewidth
+newpath
+29 96 moveto
+34 96 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 173 moveto
+32 173 lineto
+32 173 lineto
+31 173 lineto
+31 173 lineto
+31 173 lineto
+30 174 lineto
+30 174 lineto
+30 175 lineto
+30 175 lineto
+31 176 lineto
+31 176 lineto
+31 176 lineto
+32 176 lineto
+32 176 lineto
+32 176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 176 moveto
+32 176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1162 96 moveto
+1157 96 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 175 moveto
+1160 175 lineto
+1160 175 lineto
+1159 175 lineto
+1159 175 lineto
+1158 176 lineto
+1158 176 lineto
+1158 177 lineto
+1158 177 lineto
+1158 178 lineto
+1158 178 lineto
+1159 179 lineto
+1159 179 lineto
+1160 179 lineto
+1160 179 lineto
+1160 178 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 178 moveto
+1160 178 lineto
+stroke
+0.283000 setlinewidth
+newpath
+29 -61 moveto
+34 -61 lineto
+stroke
+0.283000 setlinewidth
+newpath
+30 16 moveto
+30 19 lineto
+31 19 lineto
+32 19 lineto
+32 19 lineto
+32 19 lineto
+32 18 lineto
+32 17 lineto
+32 17 lineto
+32 16 lineto
+32 16 lineto
+31 16 lineto
+30 16 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1162 -61 moveto
+1157 -61 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1158 18 moveto
+1158 22 lineto
+1159 22 lineto
+1160 22 lineto
+1160 21 lineto
+1160 21 lineto
+1160 20 lineto
+1160 20 lineto
+1160 19 lineto
+1160 19 lineto
+1160 19 lineto
+1159 18 lineto
+1158 18 lineto
+stroke
+0.283000 setlinewidth
+newpath
+31 -139 moveto
+32 -139 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 -139 moveto
+32 -139 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 -141 moveto
+31 -141 lineto
+31 -137 lineto
+32 -137 lineto
+stroke
+0.283000 setlinewidth
+newpath
+32 -137 moveto
+32 -137 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1158 -137 moveto
+1160 -137 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 -137 moveto
+1160 -137 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 -138 moveto
+1158 -138 lineto
+1158 -135 lineto
+1160 -135 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1160 -135 moveto
+1160 -135 lineto
+stroke
+0.283000 setlinewidth
+newpath
+920 -202 moveto
+920 -198 lineto
+921 -198 lineto
+922 -198 lineto
+922 -198 lineto
+922 -199 lineto
+923 -199 lineto
+923 -200 lineto
+922 -201 lineto
+922 -201 lineto
+922 -202 lineto
+921 -202 lineto
+920 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+926 -202 moveto
+926 -200 lineto
+926 -199 lineto
+926 -199 lineto
+925 -199 lineto
+924 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+924 -199 moveto
+924 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+926 -202 moveto
+926 -202 lineto
+925 -202 lineto
+924 -202 lineto
+924 -201 lineto
+924 -201 lineto
+924 -200 lineto
+925 -200 lineto
+926 -200 lineto
+926 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+926 -200 moveto
+926 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+928 -199 moveto
+929 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+929 -199 moveto
+929 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+928 -198 moveto
+928 -201 lineto
+929 -202 lineto
+929 -202 lineto
+929 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+929 -202 moveto
+929 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+932 -202 moveto
+932 -202 lineto
+931 -202 lineto
+931 -202 lineto
+931 -201 lineto
+931 -200 lineto
+931 -199 lineto
+931 -199 lineto
+932 -199 lineto
+932 -199 lineto
+933 -200 lineto
+933 -200 lineto
+931 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+931 -200 moveto
+931 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+935 -201 moveto
+935 -202 lineto
+935 -202 lineto
+934 -202 lineto
+935 -201 lineto
+935 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+935 -202 moveto
+935 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+935 -199 moveto
+935 -199 lineto
+935 -200 lineto
+934 -199 lineto
+935 -199 lineto
+935 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+935 -200 moveto
+935 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+942 -202 moveto
+940 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+940 -202 moveto
+940 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+941 -202 moveto
+941 -198 lineto
+940 -198 lineto
+940 -199 lineto
+940 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+940 -199 moveto
+940 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+949 -202 moveto
+949 -200 lineto
+949 -199 lineto
+948 -199 lineto
+948 -199 lineto
+947 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+947 -199 moveto
+947 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+949 -202 moveto
+949 -202 lineto
+948 -202 lineto
+947 -202 lineto
+947 -201 lineto
+947 -201 lineto
+947 -200 lineto
+948 -200 lineto
+949 -200 lineto
+949 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+949 -200 moveto
+949 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+951 -199 moveto
+951 -203 lineto
+stroke
+0.283000 setlinewidth
+newpath
+951 -203 moveto
+951 -203 lineto
+stroke
+0.283000 setlinewidth
+newpath
+951 -199 moveto
+952 -199 lineto
+952 -199 lineto
+953 -199 lineto
+953 -199 lineto
+953 -200 lineto
+953 -201 lineto
+953 -201 lineto
+953 -202 lineto
+952 -202 lineto
+952 -202 lineto
+951 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+951 -202 moveto
+951 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+955 -202 moveto
+955 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+955 -199 moveto
+955 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+955 -200 moveto
+955 -199 lineto
+955 -199 lineto
+956 -199 lineto
+956 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+956 -199 moveto
+956 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+961 -198 moveto
+961 -198 lineto
+961 -198 lineto
+962 -198 lineto
+963 -198 lineto
+963 -198 lineto
+963 -198 lineto
+963 -199 lineto
+963 -199 lineto
+961 -202 lineto
+963 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+963 -202 moveto
+963 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+966 -198 moveto
+966 -198 lineto
+967 -198 lineto
+967 -198 lineto
+967 -198 lineto
+967 -199 lineto
+967 -200 lineto
+967 -201 lineto
+967 -201 lineto
+967 -202 lineto
+966 -202 lineto
+966 -202 lineto
+966 -202 lineto
+965 -201 lineto
+965 -201 lineto
+965 -200 lineto
+965 -199 lineto
+965 -198 lineto
+965 -198 lineto
+966 -198 lineto
+966 -198 lineto
+stroke
+0.283000 setlinewidth
+newpath
+972 -202 moveto
+969 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+969 -202 moveto
+969 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+970 -202 moveto
+970 -198 lineto
+970 -198 lineto
+969 -199 lineto
+969 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+969 -199 moveto
+969 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+974 -199 moveto
+974 -199 lineto
+973 -199 lineto
+973 -199 lineto
+973 -198 lineto
+973 -198 lineto
+974 -198 lineto
+974 -198 lineto
+975 -198 lineto
+975 -198 lineto
+975 -198 lineto
+976 -198 lineto
+976 -199 lineto
+975 -199 lineto
+975 -199 lineto
+975 -199 lineto
+974 -199 lineto
+974 -200 lineto
+973 -200 lineto
+973 -200 lineto
+973 -201 lineto
+973 -201 lineto
+974 -202 lineto
+974 -202 lineto
+975 -202 lineto
+975 -202 lineto
+975 -201 lineto
+976 -201 lineto
+976 -200 lineto
+975 -200 lineto
+975 -200 lineto
+975 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+975 -199 moveto
+975 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+860 -210 moveto
+860 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+860 -206 moveto
+860 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+862 -210 moveto
+860 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+860 -208 moveto
+860 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+862 -206 moveto
+860 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+860 -209 moveto
+860 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -210 moveto
+864 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -208 moveto
+864 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -206 moveto
+864 -206 lineto
+864 -207 lineto
+864 -206 lineto
+864 -206 lineto
+864 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -207 moveto
+864 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+868 -210 moveto
+868 -210 lineto
+868 -210 lineto
+867 -210 lineto
+867 -210 lineto
+866 -210 lineto
+866 -209 lineto
+866 -209 lineto
+866 -208 lineto
+866 -207 lineto
+866 -207 lineto
+867 -206 lineto
+867 -206 lineto
+868 -206 lineto
+868 -206 lineto
+868 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+868 -207 moveto
+868 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+872 -210 moveto
+872 -208 lineto
+872 -208 lineto
+872 -208 lineto
+871 -208 lineto
+870 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+870 -208 moveto
+870 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+872 -210 moveto
+872 -210 lineto
+871 -210 lineto
+870 -210 lineto
+870 -210 lineto
+870 -209 lineto
+870 -209 lineto
+871 -209 lineto
+872 -209 lineto
+872 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+872 -209 moveto
+872 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -210 moveto
+876 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -206 moveto
+876 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -210 moveto
+876 -210 lineto
+875 -210 lineto
+874 -210 lineto
+874 -210 lineto
+874 -210 lineto
+874 -208 lineto
+874 -208 lineto
+874 -208 lineto
+875 -208 lineto
+876 -208 lineto
+876 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -208 moveto
+876 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+881 -208 moveto
+883 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+883 -208 moveto
+883 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+883 -210 moveto
+881 -210 lineto
+881 -206 lineto
+883 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+883 -206 moveto
+883 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+885 -210 moveto
+886 -210 lineto
+885 -210 lineto
+885 -210 lineto
+885 -210 lineto
+885 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+885 -210 moveto
+885 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+887 -210 moveto
+887 -206 lineto
+888 -206 lineto
+889 -206 lineto
+889 -207 lineto
+890 -207 lineto
+890 -208 lineto
+890 -209 lineto
+890 -209 lineto
+889 -210 lineto
+889 -210 lineto
+888 -210 lineto
+887 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+892 -210 moveto
+892 -210 lineto
+892 -210 lineto
+892 -210 lineto
+892 -210 lineto
+892 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+892 -210 moveto
+892 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+894 -209 moveto
+896 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+896 -209 moveto
+896 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+893 -210 moveto
+895 -206 lineto
+896 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+896 -210 moveto
+896 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+897 -210 moveto
+898 -210 lineto
+897 -210 lineto
+897 -210 lineto
+897 -210 lineto
+897 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+897 -210 moveto
+897 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+906 -208 moveto
+906 -212 lineto
+stroke
+0.283000 setlinewidth
+newpath
+906 -212 moveto
+906 -212 lineto
+stroke
+0.283000 setlinewidth
+newpath
+906 -208 moveto
+907 -208 lineto
+907 -208 lineto
+908 -208 lineto
+908 -208 lineto
+908 -208 lineto
+908 -210 lineto
+908 -210 lineto
+908 -210 lineto
+907 -210 lineto
+907 -210 lineto
+906 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+906 -210 moveto
+906 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+912 -210 moveto
+911 -210 lineto
+911 -210 lineto
+910 -210 lineto
+910 -210 lineto
+910 -210 lineto
+910 -208 lineto
+910 -208 lineto
+910 -208 lineto
+911 -208 lineto
+911 -208 lineto
+912 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+912 -208 moveto
+912 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+914 -210 moveto
+914 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+914 -206 moveto
+914 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+914 -208 moveto
+914 -208 lineto
+915 -208 lineto
+915 -208 lineto
+916 -208 lineto
+916 -208 lineto
+916 -210 lineto
+916 -210 lineto
+915 -210 lineto
+915 -210 lineto
+914 -210 lineto
+914 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+914 -210 moveto
+914 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 -208 moveto
+918 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 -210 moveto
+918 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 -208 moveto
+918 -208 lineto
+918 -208 lineto
+919 -208 lineto
+919 -208 lineto
+919 -208 lineto
+919 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+919 -210 moveto
+919 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+923 -210 moveto
+923 -210 lineto
+922 -210 lineto
+922 -210 lineto
+921 -210 lineto
+921 -208 lineto
+922 -208 lineto
+922 -208 lineto
+923 -208 lineto
+923 -208 lineto
+923 -208 lineto
+923 -209 lineto
+921 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+921 -209 moveto
+921 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+925 -208 moveto
+926 -210 lineto
+926 -208 lineto
+927 -210 lineto
+928 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+928 -208 moveto
+928 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+934 -212 moveto
+934 -212 lineto
+934 -211 lineto
+933 -211 lineto
+933 -210 lineto
+933 -209 lineto
+933 -208 lineto
+933 -207 lineto
+933 -207 lineto
+934 -206 lineto
+934 -206 lineto
+934 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+934 -206 moveto
+934 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+936 -207 moveto
+936 -206 lineto
+936 -206 lineto
+937 -206 lineto
+938 -206 lineto
+938 -207 lineto
+938 -207 lineto
+938 -207 lineto
+938 -208 lineto
+936 -210 lineto
+938 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+938 -210 moveto
+938 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+941 -206 moveto
+941 -206 lineto
+942 -206 lineto
+942 -207 lineto
+942 -207 lineto
+942 -208 lineto
+942 -209 lineto
+942 -210 lineto
+942 -210 lineto
+942 -210 lineto
+941 -210 lineto
+941 -210 lineto
+940 -210 lineto
+940 -210 lineto
+940 -210 lineto
+940 -209 lineto
+940 -208 lineto
+940 -207 lineto
+940 -207 lineto
+940 -206 lineto
+941 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+946 -210 moveto
+944 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+944 -210 moveto
+944 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+945 -210 moveto
+945 -206 lineto
+945 -207 lineto
+944 -207 lineto
+944 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+944 -207 moveto
+944 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+948 -206 moveto
+951 -206 lineto
+949 -208 lineto
+950 -208 lineto
+950 -208 lineto
+950 -208 lineto
+951 -209 lineto
+951 -210 lineto
+950 -210 lineto
+950 -210 lineto
+950 -210 lineto
+948 -210 lineto
+948 -210 lineto
+948 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+948 -210 moveto
+948 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+952 -209 moveto
+956 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+956 -209 moveto
+956 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+958 -208 moveto
+958 -211 lineto
+958 -212 lineto
+957 -212 lineto
+957 -212 lineto
+stroke
+0.283000 setlinewidth
+newpath
+957 -212 moveto
+957 -212 lineto
+stroke
+0.283000 setlinewidth
+newpath
+958 -206 moveto
+958 -206 lineto
+958 -207 lineto
+958 -206 lineto
+958 -206 lineto
+958 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+958 -207 moveto
+958 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+962 -208 moveto
+962 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+962 -210 moveto
+962 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+960 -208 moveto
+960 -210 lineto
+960 -210 lineto
+960 -210 lineto
+961 -210 lineto
+961 -210 lineto
+962 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+962 -210 moveto
+962 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+964 -210 moveto
+964 -210 lineto
+964 -210 lineto
+964 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+964 -206 moveto
+964 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+966 -209 moveto
+969 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+969 -209 moveto
+969 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+972 -206 moveto
+973 -206 lineto
+973 -206 lineto
+973 -207 lineto
+973 -207 lineto
+974 -208 lineto
+974 -209 lineto
+973 -210 lineto
+973 -210 lineto
+973 -210 lineto
+973 -210 lineto
+972 -210 lineto
+972 -210 lineto
+972 -210 lineto
+971 -210 lineto
+971 -209 lineto
+971 -208 lineto
+971 -207 lineto
+972 -207 lineto
+972 -206 lineto
+972 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+975 -206 moveto
+978 -206 lineto
+976 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+976 -210 moveto
+976 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+979 -212 moveto
+979 -212 lineto
+980 -211 lineto
+980 -211 lineto
+980 -210 lineto
+980 -209 lineto
+980 -208 lineto
+980 -207 lineto
+980 -207 lineto
+980 -206 lineto
+979 -206 lineto
+979 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+979 -206 moveto
+979 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+982 -209 moveto
+986 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+986 -209 moveto
+986 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+988 -210 moveto
+988 -210 lineto
+989 -210 lineto
+989 -210 lineto
+989 -210 lineto
+989 -210 lineto
+989 -209 lineto
+989 -209 lineto
+988 -209 lineto
+988 -209 lineto
+988 -208 lineto
+988 -208 lineto
+988 -208 lineto
+988 -208 lineto
+989 -208 lineto
+989 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+989 -208 moveto
+989 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+991 -208 moveto
+992 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+992 -208 moveto
+992 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+991 -206 moveto
+991 -210 lineto
+991 -210 lineto
+992 -210 lineto
+992 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+992 -210 moveto
+992 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+996 -210 moveto
+996 -208 lineto
+995 -208 lineto
+995 -208 lineto
+994 -208 lineto
+994 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+994 -208 moveto
+994 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+996 -210 moveto
+995 -210 lineto
+994 -210 lineto
+994 -210 lineto
+994 -210 lineto
+994 -209 lineto
+994 -209 lineto
+994 -209 lineto
+995 -209 lineto
+996 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+996 -209 moveto
+996 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+998 -210 moveto
+998 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+998 -206 moveto
+998 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+998 -208 moveto
+998 -208 lineto
+999 -208 lineto
+999 -208 lineto
+1000 -208 lineto
+1000 -208 lineto
+1000 -210 lineto
+1000 -210 lineto
+999 -210 lineto
+999 -210 lineto
+998 -210 lineto
+998 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+998 -210 moveto
+998 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1002 -210 moveto
+1002 -210 lineto
+1002 -210 lineto
+1002 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1002 -206 moveto
+1002 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1005 -210 moveto
+1005 -210 lineto
+1004 -210 lineto
+1004 -210 lineto
+1004 -210 lineto
+1004 -208 lineto
+1004 -208 lineto
+1004 -208 lineto
+1005 -208 lineto
+1005 -208 lineto
+1006 -208 lineto
+1006 -209 lineto
+1004 -209 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1004 -209 moveto
+1004 -209 lineto
+stroke
+0.864000 setlinewidth
+0.864000 setlinewidth
+newpath
+1101 -202 moveto
+1100 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1100 -200 moveto
+1100 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1099 -202 moveto
+1099 -198 lineto
+1100 -198 lineto
+1101 -198 lineto
+1101 -198 lineto
+1101 -198 lineto
+1101 -199 lineto
+1101 -199 lineto
+1101 -200 lineto
+1100 -200 lineto
+1099 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1099 -200 moveto
+1099 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1105 -202 moveto
+1104 -202 lineto
+1103 -202 lineto
+1103 -202 lineto
+1103 -201 lineto
+1103 -200 lineto
+1103 -199 lineto
+1103 -199 lineto
+1104 -199 lineto
+1105 -199 lineto
+1105 -200 lineto
+1105 -200 lineto
+1103 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1103 -200 moveto
+1103 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1106 -199 moveto
+1107 -202 lineto
+1108 -199 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1108 -199 moveto
+1108 -199 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1110 -201 moveto
+1110 -202 lineto
+1110 -202 lineto
+1110 -202 lineto
+1110 -201 lineto
+1110 -202 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1110 -202 moveto
+1110 -202 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1110 -199 moveto
+1110 -199 lineto
+1110 -200 lineto
+1110 -199 lineto
+1110 -199 lineto
+1110 -200 lineto
+stroke
+0.864000 setlinewidth
+newpath
+1110 -200 moveto
+1110 -200 lineto
+stroke
+0.283000 setlinewidth
+0.283000 setlinewidth
+newpath
+859 -202 moveto
+860 -202 lineto
+861 -202 lineto
+861 -202 lineto
+862 -201 lineto
+862 -201 lineto
+862 -201 lineto
+862 -200 lineto
+861 -200 lineto
+861 -200 lineto
+860 -200 lineto
+860 -199 lineto
+860 -199 lineto
+859 -199 lineto
+859 -198 lineto
+860 -198 lineto
+860 -198 lineto
+860 -198 lineto
+861 -198 lineto
+862 -198 lineto
+stroke
+0.283000 setlinewidth
+newpath
+862 -198 moveto
+862 -198 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -202 moveto
+864 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -199 moveto
+864 -199 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -198 moveto
+864 -198 lineto
+864 -198 lineto
+864 -198 lineto
+864 -198 lineto
+864 -198 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -198 moveto
+864 -198 lineto
+stroke
+0.283000 setlinewidth
+newpath
+865 -199 moveto
+868 -199 lineto
+865 -202 lineto
+868 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+868 -202 moveto
+868 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+871 -202 moveto
+871 -202 lineto
+870 -202 lineto
+869 -202 lineto
+869 -201 lineto
+869 -200 lineto
+869 -199 lineto
+870 -199 lineto
+871 -199 lineto
+871 -199 lineto
+871 -200 lineto
+871 -200 lineto
+869 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+869 -200 moveto
+869 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+873 -201 moveto
+873 -202 lineto
+873 -202 lineto
+873 -202 lineto
+873 -201 lineto
+873 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+873 -202 moveto
+873 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+873 -199 moveto
+873 -199 lineto
+873 -200 lineto
+873 -199 lineto
+873 -199 lineto
+873 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+873 -200 moveto
+873 -200 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -201 moveto
+880 -201 lineto
+stroke
+0.283000 setlinewidth
+newpath
+880 -201 moveto
+880 -201 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -202 moveto
+879 -198 lineto
+881 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+881 -202 moveto
+881 -202 lineto
+stroke
+0.283000 setlinewidth
+newpath
+882 -198 moveto
+884 -198 lineto
+883 -199 lineto
+883 -199 lineto
+884 -199 lineto
+884 -200 lineto
+884 -200 lineto
+884 -201 lineto
+884 -201 lineto
+884 -202 lineto
+883 -202 lineto
+882 -202 lineto
+882 -202 lineto
+882 -201 lineto
+stroke
+0.283000 setlinewidth
+newpath
+882 -201 moveto
+882 -201 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1099 -210 moveto
+1099 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1099 -206 moveto
+1099 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1103 -210 moveto
+1103 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1103 -206 moveto
+1103 -206 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1103 -210 moveto
+1102 -210 lineto
+1101 -210 lineto
+1101 -210 lineto
+1101 -210 lineto
+1101 -210 lineto
+1101 -208 lineto
+1101 -208 lineto
+1101 -208 lineto
+1101 -208 lineto
+1102 -208 lineto
+1103 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1103 -208 moveto
+1103 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1105 -210 moveto
+1105 -210 lineto
+1105 -210 lineto
+1104 -210 lineto
+1105 -210 lineto
+1105 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1105 -210 moveto
+1105 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1105 -208 moveto
+1105 -208 lineto
+1105 -208 lineto
+1104 -208 lineto
+1105 -208 lineto
+1105 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1105 -208 moveto
+1105 -208 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1112 -210 moveto
+1110 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1110 -210 moveto
+1110 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1111 -210 moveto
+1111 -206 lineto
+1111 -207 lineto
+1110 -207 lineto
+1110 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1110 -207 moveto
+1110 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1117 -206 moveto
+1113 -212 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1113 -212 moveto
+1113 -212 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1121 -210 moveto
+1118 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1118 -210 moveto
+1118 -210 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1120 -210 moveto
+1120 -206 lineto
+1119 -207 lineto
+1119 -207 lineto
+1118 -207 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1118 -207 moveto
+1118 -207 lineto
+stroke
+0.864000 setlinewidth
+0.864000 setlinewidth
+newpath
+859 -189 moveto
+861 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+861 -189 moveto
+861 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+860 -193 moveto
+860 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+860 -189 moveto
+860 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+863 -193 moveto
+863 -190 lineto
+stroke
+0.864000 setlinewidth
+newpath
+863 -190 moveto
+863 -190 lineto
+stroke
+0.864000 setlinewidth
+newpath
+863 -189 moveto
+863 -189 lineto
+863 -189 lineto
+863 -189 lineto
+863 -189 lineto
+863 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+863 -189 moveto
+863 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+864 -190 moveto
+866 -190 lineto
+stroke
+0.864000 setlinewidth
+newpath
+866 -190 moveto
+866 -190 lineto
+stroke
+0.864000 setlinewidth
+newpath
+865 -189 moveto
+865 -193 lineto
+865 -193 lineto
+866 -193 lineto
+866 -193 lineto
+stroke
+0.864000 setlinewidth
+newpath
+866 -193 moveto
+866 -193 lineto
+stroke
+0.864000 setlinewidth
+newpath
+868 -193 moveto
+868 -193 lineto
+867 -193 lineto
+867 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+867 -189 moveto
+867 -189 lineto
+stroke
+0.864000 setlinewidth
+newpath
+871 -193 moveto
+871 -193 lineto
+870 -193 lineto
+870 -193 lineto
+870 -193 lineto
+870 -191 lineto
+870 -191 lineto
+870 -190 lineto
+871 -190 lineto
+871 -191 lineto
+872 -191 lineto
+872 -191 lineto
+870 -192 lineto
+stroke
+0.864000 setlinewidth
+newpath
+870 -192 moveto
+870 -192 lineto
+stroke
+0.864000 setlinewidth
+newpath
+873 -193 moveto
+874 -193 lineto
+873 -193 lineto
+873 -193 lineto
+873 -193 lineto
+873 -193 lineto
+stroke
+0.864000 setlinewidth
+newpath
+873 -193 moveto
+873 -193 lineto
+stroke
+0.864000 setlinewidth
+newpath
+873 -191 moveto
+874 -191 lineto
+873 -191 lineto
+873 -191 lineto
+873 -191 lineto
+873 -191 lineto
+stroke
+0.864000 setlinewidth
+newpath
+873 -191 moveto
+873 -191 lineto
+stroke
+0.283000 setlinewidth
+0.283000 setlinewidth
+newpath
+861 -174 moveto
+860 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+860 -174 moveto
+860 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+860 -176 moveto
+860 -172 lineto
+862 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+862 -172 moveto
+862 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+863 -176 moveto
+863 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+863 -173 moveto
+863 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+863 -172 moveto
+863 -172 lineto
+863 -172 lineto
+864 -172 lineto
+863 -172 lineto
+863 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+863 -172 moveto
+863 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+866 -176 moveto
+866 -176 lineto
+865 -175 lineto
+865 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+865 -172 moveto
+865 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+869 -176 moveto
+869 -176 lineto
+868 -176 lineto
+868 -176 lineto
+867 -175 lineto
+867 -174 lineto
+868 -173 lineto
+868 -173 lineto
+869 -173 lineto
+869 -173 lineto
+870 -174 lineto
+870 -174 lineto
+867 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+867 -174 moveto
+867 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+871 -176 moveto
+872 -176 lineto
+871 -176 lineto
+871 -176 lineto
+871 -176 lineto
+871 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+871 -176 moveto
+871 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+871 -173 moveto
+872 -173 lineto
+871 -174 lineto
+871 -173 lineto
+871 -173 lineto
+871 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+871 -174 moveto
+871 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -176 moveto
+878 -176 lineto
+877 -176 lineto
+877 -176 lineto
+876 -175 lineto
+876 -174 lineto
+877 -173 lineto
+877 -173 lineto
+878 -173 lineto
+878 -173 lineto
+879 -174 lineto
+879 -174 lineto
+876 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -174 moveto
+876 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+880 -173 moveto
+880 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+880 -176 moveto
+880 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+880 -173 moveto
+881 -173 lineto
+881 -173 lineto
+882 -173 lineto
+882 -173 lineto
+882 -174 lineto
+882 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+882 -176 moveto
+882 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+884 -173 moveto
+885 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+885 -173 moveto
+885 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+884 -172 moveto
+884 -175 lineto
+885 -176 lineto
+885 -176 lineto
+885 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+885 -176 moveto
+885 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+887 -176 moveto
+887 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+887 -173 moveto
+887 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+887 -174 moveto
+887 -173 lineto
+887 -173 lineto
+888 -173 lineto
+888 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+888 -173 moveto
+888 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+891 -176 moveto
+891 -174 lineto
+891 -173 lineto
+891 -173 lineto
+890 -173 lineto
+889 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+889 -173 moveto
+889 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+891 -176 moveto
+891 -176 lineto
+890 -176 lineto
+889 -176 lineto
+889 -175 lineto
+889 -175 lineto
+889 -174 lineto
+890 -174 lineto
+891 -174 lineto
+891 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+891 -174 moveto
+891 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+895 -176 moveto
+895 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+895 -172 moveto
+895 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+895 -176 moveto
+895 -176 lineto
+894 -176 lineto
+894 -176 lineto
+893 -176 lineto
+893 -175 lineto
+893 -174 lineto
+893 -173 lineto
+894 -173 lineto
+894 -173 lineto
+895 -173 lineto
+895 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+895 -173 moveto
+895 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+899 -176 moveto
+899 -174 lineto
+899 -173 lineto
+899 -173 lineto
+898 -173 lineto
+897 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+897 -173 moveto
+897 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+899 -176 moveto
+899 -176 lineto
+898 -176 lineto
+897 -176 lineto
+897 -175 lineto
+897 -175 lineto
+897 -174 lineto
+898 -174 lineto
+899 -174 lineto
+899 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+899 -174 moveto
+899 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+901 -176 moveto
+901 -176 lineto
+902 -176 lineto
+903 -176 lineto
+903 -175 lineto
+903 -175 lineto
+903 -175 lineto
+902 -174 lineto
+902 -174 lineto
+901 -174 lineto
+901 -174 lineto
+901 -174 lineto
+901 -173 lineto
+902 -173 lineto
+902 -173 lineto
+903 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+903 -173 moveto
+903 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+905 -174 moveto
+908 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+908 -174 moveto
+908 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+910 -173 moveto
+910 -177 lineto
+stroke
+0.283000 setlinewidth
+newpath
+910 -177 moveto
+910 -177 lineto
+stroke
+0.283000 setlinewidth
+newpath
+910 -173 moveto
+910 -173 lineto
+911 -173 lineto
+912 -173 lineto
+912 -173 lineto
+912 -174 lineto
+912 -175 lineto
+912 -176 lineto
+912 -176 lineto
+911 -176 lineto
+910 -176 lineto
+910 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+910 -176 moveto
+910 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+915 -176 moveto
+914 -176 lineto
+914 -175 lineto
+914 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+914 -172 moveto
+914 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 -176 moveto
+918 -176 lineto
+917 -176 lineto
+916 -176 lineto
+916 -176 lineto
+916 -175 lineto
+916 -174 lineto
+916 -173 lineto
+916 -173 lineto
+917 -173 lineto
+918 -173 lineto
+918 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+918 -173 moveto
+918 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+920 -176 moveto
+920 -176 lineto
+920 -176 lineto
+920 -176 lineto
+920 -176 lineto
+920 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+920 -176 moveto
+920 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+922 -176 moveto
+922 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+922 -172 moveto
+922 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+922 -174 moveto
+924 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+924 -176 moveto
+924 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+924 -173 moveto
+922 -175 lineto
+stroke
+0.283000 setlinewidth
+newpath
+922 -175 moveto
+922 -175 lineto
+stroke
+0.283000 setlinewidth
+newpath
+925 -176 moveto
+925 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+925 -173 moveto
+925 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+925 -172 moveto
+925 -172 lineto
+925 -172 lineto
+926 -172 lineto
+925 -172 lineto
+925 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+925 -172 moveto
+925 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+929 -176 moveto
+929 -176 lineto
+928 -176 lineto
+928 -176 lineto
+928 -176 lineto
+927 -175 lineto
+927 -174 lineto
+928 -173 lineto
+928 -173 lineto
+928 -173 lineto
+929 -173 lineto
+929 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+929 -173 moveto
+929 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+933 -176 moveto
+933 -174 lineto
+933 -173 lineto
+932 -173 lineto
+932 -173 lineto
+931 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+931 -173 moveto
+931 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+933 -176 moveto
+933 -176 lineto
+932 -176 lineto
+931 -176 lineto
+931 -175 lineto
+931 -175 lineto
+931 -174 lineto
+932 -174 lineto
+933 -174 lineto
+933 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+933 -174 moveto
+933 -174 lineto
+stroke
+0.283000 setlinewidth
+newpath
+937 -176 moveto
+937 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+937 -172 moveto
+937 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+937 -176 moveto
+937 -176 lineto
+936 -176 lineto
+935 -176 lineto
+935 -176 lineto
+935 -175 lineto
+935 -174 lineto
+935 -173 lineto
+935 -173 lineto
+936 -173 lineto
+937 -173 lineto
+937 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+937 -173 moveto
+937 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+938 -176 moveto
+941 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+941 -176 moveto
+941 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+942 -173 moveto
+942 -177 lineto
+stroke
+0.283000 setlinewidth
+newpath
+942 -177 moveto
+942 -177 lineto
+stroke
+0.283000 setlinewidth
+newpath
+942 -173 moveto
+943 -173 lineto
+944 -173 lineto
+944 -173 lineto
+944 -173 lineto
+944 -174 lineto
+944 -175 lineto
+944 -176 lineto
+944 -176 lineto
+944 -176 lineto
+943 -176 lineto
+942 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+942 -176 moveto
+942 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+948 -176 moveto
+948 -176 lineto
+947 -176 lineto
+946 -176 lineto
+946 -176 lineto
+946 -175 lineto
+946 -174 lineto
+946 -173 lineto
+946 -173 lineto
+947 -173 lineto
+948 -173 lineto
+948 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+948 -173 moveto
+948 -173 lineto
+stroke
+0.283000 setlinewidth
+newpath
+950 -176 moveto
+950 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+950 -172 moveto
+950 -172 lineto
+stroke
+0.283000 setlinewidth
+newpath
+950 -173 moveto
+950 -173 lineto
+951 -173 lineto
+952 -173 lineto
+952 -173 lineto
+952 -174 lineto
+952 -175 lineto
+952 -176 lineto
+952 -176 lineto
+951 -176 lineto
+950 -176 lineto
+950 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+950 -176 moveto
+950 -176 lineto
+stroke
+0.283000 setlinewidth
+newpath
+859 -184 moveto
+860 -185 lineto
+861 -185 lineto
+861 -184 lineto
+862 -184 lineto
+862 -184 lineto
+862 -183 lineto
+862 -183 lineto
+861 -183 lineto
+861 -183 lineto
+860 -182 lineto
+860 -182 lineto
+860 -182 lineto
+859 -181 lineto
+859 -181 lineto
+860 -181 lineto
+860 -180 lineto
+860 -180 lineto
+861 -180 lineto
+862 -180 lineto
+stroke
+0.283000 setlinewidth
+newpath
+862 -180 moveto
+862 -180 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -185 moveto
+864 -180 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -180 moveto
+864 -180 lineto
+stroke
+0.283000 setlinewidth
+newpath
+866 -185 moveto
+866 -182 lineto
+865 -182 lineto
+865 -182 lineto
+864 -182 lineto
+864 -182 lineto
+864 -182 lineto
+stroke
+0.283000 setlinewidth
+newpath
+864 -182 moveto
+864 -182 lineto
+stroke
+0.283000 setlinewidth
+newpath
+869 -184 moveto
+869 -185 lineto
+868 -185 lineto
+868 -184 lineto
+867 -184 lineto
+867 -182 lineto
+868 -182 lineto
+868 -182 lineto
+869 -182 lineto
+869 -182 lineto
+870 -182 lineto
+870 -183 lineto
+867 -183 lineto
+stroke
+0.283000 setlinewidth
+newpath
+867 -183 moveto
+867 -183 lineto
+stroke
+0.283000 setlinewidth
+newpath
+873 -184 moveto
+873 -185 lineto
+872 -185 lineto
+871 -184 lineto
+871 -184 lineto
+871 -182 lineto
+871 -182 lineto
+872 -182 lineto
+873 -182 lineto
+873 -182 lineto
+873 -182 lineto
+873 -183 lineto
+871 -183 lineto
+stroke
+0.283000 setlinewidth
+newpath
+871 -183 moveto
+871 -183 lineto
+stroke
+0.283000 setlinewidth
+newpath
+874 -182 moveto
+876 -182 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -182 moveto
+876 -182 lineto
+stroke
+0.283000 setlinewidth
+newpath
+875 -180 moveto
+875 -184 lineto
+875 -184 lineto
+876 -185 lineto
+876 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+876 -185 moveto
+876 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -184 moveto
+878 -184 lineto
+878 -185 lineto
+877 -184 lineto
+878 -184 lineto
+878 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -185 moveto
+878 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -182 moveto
+878 -182 lineto
+878 -182 lineto
+877 -182 lineto
+878 -182 lineto
+878 -182 lineto
+stroke
+0.283000 setlinewidth
+newpath
+878 -182 moveto
+878 -182 lineto
+stroke
+0.283000 setlinewidth
+newpath
+885 -185 moveto
+883 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+883 -185 moveto
+883 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+884 -185 moveto
+884 -180 lineto
+883 -181 lineto
+883 -181 lineto
+883 -181 lineto
+stroke
+0.283000 setlinewidth
+newpath
+883 -181 moveto
+883 -181 lineto
+stroke
+0.283000 setlinewidth
+newpath
+890 -180 moveto
+886 -186 lineto
+stroke
+0.283000 setlinewidth
+newpath
+886 -186 moveto
+886 -186 lineto
+stroke
+0.283000 setlinewidth
+newpath
+894 -185 moveto
+891 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+891 -185 moveto
+891 -185 lineto
+stroke
+0.283000 setlinewidth
+newpath
+893 -185 moveto
+893 -180 lineto
+892 -181 lineto
+892 -181 lineto
+891 -181 lineto
+stroke
+0.283000 setlinewidth
+newpath
+891 -181 moveto
+891 -181 lineto
+stroke
+0.283000 setlinewidth
+newpath
+854 -170 moveto
+854 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+854 -170 moveto
+1157 -170 lineto
+stroke
+0.283000 setlinewidth
+newpath
+854 -170 moveto
+1157 -170 lineto
+stroke
+0.283000 setlinewidth
+newpath
+854 -187 moveto
+1157 -187 lineto
+stroke
+0.283000 setlinewidth
+newpath
+1093 -196 moveto
+1093 -213 lineto
+stroke
+0.283000 setlinewidth
+newpath
+854 -204 moveto
+1157 -204 lineto
+stroke
+0.283000 setlinewidth
+newpath
+854 -196 moveto
+1157 -196 lineto
+stroke
+0.283000 setlinewidth
+newpath
+902 -196 moveto
+902 -204 lineto
+stroke
+0.000000 setlinewidth
+0.000000 setlinewidth
+newpath
+180 109 moveto
+180 426 lineto
+stroke
+0.000000 setlinewidth
+newpath
+461 109 moveto
+180 109 lineto
+stroke
+0.000000 setlinewidth
+newpath
+461 426 moveto
+461 109 lineto
+stroke
+0.000000 setlinewidth
+newpath
+180 426 moveto
+461 426 lineto
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+187 368 moveto
+184 372 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 372 moveto
+184 370 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 303 moveto
+184 307 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 307 moveto
+184 305 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 368 moveto
+184 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 303 moveto
+184 303 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 285 moveto
+184 285 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 271 moveto
+187 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 188 moveto
+184 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 188 moveto
+184 192 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 192 moveto
+184 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 206 moveto
+184 203 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 203 moveto
+184 204 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 206 moveto
+184 210 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 210 moveto
+184 208 lineto
+stroke
+2.835000 setlinewidth
+newpath
+367 158 moveto
+364 161 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 161 moveto
+364 159 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 154 moveto
+364 156 lineto
+stroke
+2.835000 setlinewidth
+newpath
+367 158 moveto
+364 154 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 156 moveto
+364 158 lineto
+stroke
+2.835000 setlinewidth
+newpath
+367 158 moveto
+364 158 lineto
+stroke
+2.835000 setlinewidth
+newpath
+382 147 moveto
+382 154 lineto
+stroke
+2.835000 setlinewidth
+newpath
+378 158 moveto
+367 158 lineto
+stroke
+2.835000 setlinewidth
+newpath
+382 154 moveto
+378 158 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 357 moveto
+364 363 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 386 moveto
+364 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 384 moveto
+364 386 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 384 moveto
+362 384 lineto
+stroke
+2.835000 setlinewidth
+newpath
+340 381 moveto
+344 384 lineto
+stroke
+2.835000 setlinewidth
+newpath
+340 368 moveto
+340 381 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 365 moveto
+340 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 365 moveto
+344 365 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 363 moveto
+362 365 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 325 moveto
+364 330 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 354 moveto
+364 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 352 moveto
+364 354 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 352 moveto
+362 352 lineto
+stroke
+2.835000 setlinewidth
+newpath
+340 348 moveto
+344 352 lineto
+stroke
+2.835000 setlinewidth
+newpath
+340 336 moveto
+340 348 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 332 moveto
+340 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 332 moveto
+344 332 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 330 moveto
+362 332 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 293 moveto
+364 298 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 321 moveto
+364 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 320 moveto
+364 321 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 320 moveto
+362 320 lineto
+stroke
+2.835000 setlinewidth
+newpath
+340 316 moveto
+344 320 lineto
+stroke
+2.835000 setlinewidth
+newpath
+340 303 moveto
+340 316 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 300 moveto
+340 303 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 300 moveto
+344 300 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 298 moveto
+362 300 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 260 moveto
+364 266 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 289 moveto
+364 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 287 moveto
+364 289 lineto
+stroke
+2.835000 setlinewidth
+newpath
+346 287 moveto
+362 287 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 284 moveto
+346 287 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 271 moveto
+342 284 lineto
+stroke
+2.835000 setlinewidth
+newpath
+346 267 moveto
+342 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 267 moveto
+346 267 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 266 moveto
+362 267 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 228 moveto
+364 231 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 257 moveto
+364 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 255 moveto
+364 257 lineto
+stroke
+2.835000 setlinewidth
+newpath
+347 255 moveto
+362 255 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 251 moveto
+347 255 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 249 moveto
+344 251 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 239 moveto
+344 249 lineto
+stroke
+2.835000 setlinewidth
+newpath
+347 235 moveto
+344 239 lineto
+stroke
+2.835000 setlinewidth
+newpath
+360 235 moveto
+347 235 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 231 moveto
+360 235 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 195 moveto
+364 199 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 224 moveto
+364 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 222 moveto
+364 224 lineto
+stroke
+2.835000 setlinewidth
+newpath
+347 222 moveto
+362 222 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 219 moveto
+347 222 lineto
+stroke
+2.835000 setlinewidth
+newpath
+344 204 moveto
+344 219 lineto
+stroke
+2.835000 setlinewidth
+newpath
+347 201 moveto
+344 204 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 201 moveto
+347 201 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 199 moveto
+362 201 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 163 moveto
+364 168 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 192 moveto
+364 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 190 moveto
+364 192 lineto
+stroke
+2.835000 setlinewidth
+newpath
+351 190 moveto
+362 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+346 185 moveto
+351 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+346 174 moveto
+346 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+349 170 moveto
+346 174 lineto
+stroke
+2.835000 setlinewidth
+newpath
+362 170 moveto
+349 170 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 168 moveto
+362 170 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 141 moveto
+252 141 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 141 moveto
+256 138 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 138 moveto
+353 138 lineto
+stroke
+2.835000 setlinewidth
+newpath
+353 138 moveto
+364 149 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 149 moveto
+364 156 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 158 moveto
+364 159 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 159 moveto
+364 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 170 moveto
+184 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 185 moveto
+184 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 190 moveto
+184 204 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 204 moveto
+184 208 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 208 moveto
+184 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 271 moveto
+184 285 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 285 moveto
+184 303 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 303 moveto
+184 305 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 305 moveto
+184 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 368 moveto
+184 370 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 370 moveto
+184 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 368 moveto
+238 339 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 365 moveto
+187 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 368 moveto
+209 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 361 moveto
+184 365 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 339 moveto
+238 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 383 moveto
+216 383 lineto
+stroke
+2.835000 setlinewidth
+newpath
+216 383 moveto
+230 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+230 368 moveto
+238 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 383 moveto
+187 383 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 379 moveto
+187 383 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 300 moveto
+184 361 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 361 moveto
+184 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 282 moveto
+184 300 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 303 moveto
+238 303 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 300 moveto
+187 303 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 267 moveto
+184 282 lineto
+stroke
+2.835000 setlinewidth
+newpath
+223 271 moveto
+238 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 285 moveto
+223 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 285 moveto
+209 285 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 282 moveto
+187 285 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 206 moveto
+184 267 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 242 moveto
+238 239 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 271 moveto
+209 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 271 moveto
+238 242 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 267 moveto
+187 271 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 188 moveto
+184 206 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 206 moveto
+187 206 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 206 moveto
+238 206 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 188 moveto
+212 188 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 167 moveto
+187 167 lineto
+stroke
+2.835000 setlinewidth
+newpath
+184 170 moveto
+184 188 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 167 moveto
+184 170 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 188 moveto
+187 188 lineto
+stroke
+2.835000 setlinewidth
+newpath
+187 188 moveto
+184 188 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 174 moveto
+238 174 lineto
+stroke
+2.835000 setlinewidth
+newpath
+212 188 moveto
+227 174 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 167 moveto
+209 167 lineto
+stroke
+2.835000 setlinewidth
+newpath
+230 141 moveto
+238 141 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 145 moveto
+230 141 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 149 moveto
+227 145 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 167 moveto
+227 149 lineto
+stroke
+2.835000 setlinewidth
+newpath
+384 378 moveto
+389 378 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 378 moveto
+389 377 lineto
+stroke
+2.835000 setlinewidth
+newpath
+383 379 moveto
+384 378 lineto
+stroke
+2.835000 setlinewidth
+newpath
+384 378 moveto
+389 374 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 379 moveto
+383 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 249 moveto
+389 249 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 282 moveto
+387 280 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 280 moveto
+387 278 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 314 moveto
+387 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 314 moveto
+389 312 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 347 moveto
+389 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+382 314 moveto
+385 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 314 moveto
+389 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+383 282 moveto
+385 282 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 282 moveto
+389 282 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 217 moveto
+389 217 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 183 moveto
+385 183 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 183 moveto
+387 181 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 183 moveto
+387 183 lineto
+stroke
+2.835000 setlinewidth
+newpath
+383 185 moveto
+389 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+392 129 moveto
+389 132 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 132 moveto
+385 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 140 moveto
+389 136 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 136 moveto
+389 138 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 140 moveto
+389 143 lineto
+stroke
+2.835000 setlinewidth
+newpath
+382 140 moveto
+385 140 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 140 moveto
+389 140 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 185 moveto
+383 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+383 185 moveto
+387 181 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 181 moveto
+389 179 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 217 moveto
+385 217 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 217 moveto
+389 213 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 249 moveto
+385 249 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 249 moveto
+389 246 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 282 moveto
+383 282 lineto
+stroke
+2.835000 setlinewidth
+newpath
+383 282 moveto
+387 278 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 278 moveto
+389 276 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 314 moveto
+382 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+382 314 moveto
+383 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+383 314 moveto
+387 311 lineto
+stroke
+2.835000 setlinewidth
+newpath
+387 311 moveto
+388 310 lineto
+stroke
+2.835000 setlinewidth
+newpath
+388 310 moveto
+389 309 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 347 moveto
+385 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 347 moveto
+389 343 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 379 moveto
+383 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 129 moveto
+389 132 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 132 moveto
+389 138 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 138 moveto
+389 140 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 140 moveto
+389 143 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 143 moveto
+389 179 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 179 moveto
+389 183 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 183 moveto
+389 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 185 moveto
+389 213 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 213 moveto
+389 217 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 217 moveto
+389 246 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 246 moveto
+389 249 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 249 moveto
+389 276 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 276 moveto
+389 282 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 282 moveto
+389 309 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 309 moveto
+389 312 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 312 moveto
+389 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 314 moveto
+389 343 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 343 moveto
+389 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 347 moveto
+389 374 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 374 moveto
+389 377 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 377 moveto
+389 408 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 408 moveto
+385 411 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 411 moveto
+371 411 lineto
+stroke
+2.835000 setlinewidth
+newpath
+380 129 moveto
+385 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+371 120 moveto
+194 120 lineto
+stroke
+2.835000 setlinewidth
+newpath
+380 129 moveto
+371 120 lineto
+stroke
+2.835000 setlinewidth
+newpath
+385 129 moveto
+389 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+389 129 moveto
+392 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+392 129 moveto
+394 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+443 343 moveto
+446 343 lineto
+stroke
+2.835000 setlinewidth
+newpath
+434 334 moveto
+443 343 lineto
+stroke
+2.835000 setlinewidth
+newpath
+434 136 moveto
+434 334 lineto
+stroke
+2.835000 setlinewidth
+newpath
+427 129 moveto
+434 136 lineto
+stroke
+2.835000 setlinewidth
+newpath
+412 129 moveto
+427 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+394 129 moveto
+412 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 411 moveto
+364 413 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 411 moveto
+418 411 lineto
+stroke
+2.835000 setlinewidth
+newpath
+403 417 moveto
+409 411 lineto
+stroke
+0.000000 setlinewidth
+newpath
+403 417 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+403 417 1 1 0 360 ellipse
+stroke
+newpath
+385 417 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+385 417 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+367 417 moveto
+385 417 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 413 moveto
+367 417 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 401 moveto
+437 401 lineto
+stroke
+2.835000 setlinewidth
+newpath
+427 411 moveto
+418 411 lineto
+stroke
+2.835000 setlinewidth
+newpath
+437 401 moveto
+427 411 lineto
+stroke
+2.835000 setlinewidth
+newpath
+306 325 moveto
+320 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 282 moveto
+369 287 lineto
+stroke
+2.835000 setlinewidth
+newpath
+414 365 moveto
+418 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+414 361 moveto
+414 365 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 355 moveto
+414 361 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 350 moveto
+409 355 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 347 moveto
+409 350 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 316 moveto
+405 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 312 moveto
+405 316 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 287 moveto
+401 312 lineto
+stroke
+0.000000 setlinewidth
+newpath
+401 287 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+401 287 1 1 0 360 ellipse
+stroke
+newpath
+382 287 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 287 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 287 moveto
+382 287 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 372 moveto
+434 372 lineto
+stroke
+2.835000 setlinewidth
+newpath
+430 368 moveto
+418 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+434 372 moveto
+430 368 lineto
+stroke
+2.835000 setlinewidth
+newpath
+306 293 moveto
+320 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+356 293 moveto
+342 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 314 moveto
+369 320 lineto
+stroke
+2.835000 setlinewidth
+newpath
+410 372 moveto
+418 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+410 363 moveto
+410 372 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 357 moveto
+410 363 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 356 moveto
+405 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 352 moveto
+405 356 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 348 moveto
+405 352 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 321 moveto
+401 348 lineto
+stroke
+2.835000 setlinewidth
+newpath
+400 320 moveto
+401 321 lineto
+stroke
+0.000000 setlinewidth
+newpath
+400 320 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+400 320 1 1 0 360 ellipse
+stroke
+newpath
+382 320 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 320 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 320 moveto
+382 320 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 379 moveto
+418 379 lineto
+stroke
+0.000000 setlinewidth
+newpath
+364 314 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 314 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+342 325 moveto
+356 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 347 moveto
+369 352 lineto
+stroke
+2.835000 setlinewidth
+newpath
+407 379 moveto
+418 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+407 365 moveto
+407 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 359 moveto
+407 365 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 354 moveto
+401 359 lineto
+stroke
+2.835000 setlinewidth
+newpath
+400 352 moveto
+401 354 lineto
+stroke
+0.000000 setlinewidth
+newpath
+400 352 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+400 352 1 1 0 360 ellipse
+stroke
+newpath
+382 352 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 352 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 352 moveto
+382 352 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 386 moveto
+434 386 lineto
+stroke
+2.835000 setlinewidth
+newpath
+430 390 moveto
+418 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+434 386 moveto
+430 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+306 357 moveto
+320 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+356 357 moveto
+342 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 379 moveto
+369 384 lineto
+stroke
+2.835000 setlinewidth
+newpath
+401 384 moveto
+418 401 lineto
+stroke
+0.000000 setlinewidth
+newpath
+401 384 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+401 384 1 1 0 360 ellipse
+stroke
+newpath
+382 384 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 384 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 384 moveto
+382 384 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 393 moveto
+436 393 lineto
+stroke
+2.835000 setlinewidth
+newpath
+428 401 moveto
+418 401 lineto
+stroke
+2.835000 setlinewidth
+newpath
+436 393 moveto
+428 401 lineto
+stroke
+2.835000 setlinewidth
+newpath
+302 195 moveto
+317 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+320 163 moveto
+302 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 163 moveto
+356 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 332 moveto
+421 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 185 moveto
+369 190 lineto
+stroke
+0.000000 setlinewidth
+newpath
+409 190 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+409 190 1 1 0 360 ellipse
+stroke
+newpath
+382 190 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 190 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 190 moveto
+382 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 190 moveto
+414 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+416 192 moveto
+414 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 194 moveto
+416 192 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 336 moveto
+418 332 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 332 moveto
+418 194 lineto
+stroke
+2.835000 setlinewidth
+newpath
+414 190 moveto
+409 190 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 350 moveto
+441 350 lineto
+stroke
+2.835000 setlinewidth
+newpath
+427 336 moveto
+421 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+441 350 moveto
+427 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+421 336 moveto
+418 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 282 moveto
+284 275 lineto
+stroke
+2.835000 setlinewidth
+newpath
+302 228 moveto
+320 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 228 moveto
+356 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 249 moveto
+369 255 lineto
+stroke
+0.000000 setlinewidth
+newpath
+405 255 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+405 255 1 1 0 360 ellipse
+stroke
+newpath
+382 255 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 255 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 255 moveto
+382 255 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 255 moveto
+405 258 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 357 moveto
+416 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 311 moveto
+405 258 lineto
+stroke
+2.835000 setlinewidth
+newpath
+405 258 moveto
+405 255 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 314 moveto
+405 311 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 345 moveto
+409 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+412 348 moveto
+409 345 lineto
+stroke
+2.835000 setlinewidth
+newpath
+412 354 moveto
+412 348 lineto
+stroke
+2.835000 setlinewidth
+newpath
+416 357 moveto
+412 354 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 365 moveto
+437 365 lineto
+stroke
+2.835000 setlinewidth
+newpath
+430 357 moveto
+418 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+437 365 moveto
+430 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+306 260 moveto
+320 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 260 moveto
+356 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 357 moveto
+299 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 357 moveto
+263 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 257 moveto
+252 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 278 moveto
+227 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 278 moveto
+209 278 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 260 moveto
+238 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 260 moveto
+252 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 260 moveto
+256 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 260 moveto
+256 257 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 257 moveto
+256 246 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 246 moveto
+259 242 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 242 moveto
+263 242 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 386 moveto
+266 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 390 moveto
+266 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+266 390 moveto
+299 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 390 moveto
+263 386 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 386 moveto
+263 379 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 159 moveto
+252 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 181 moveto
+209 181 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 163 moveto
+238 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 181 moveto
+227 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 163 moveto
+256 159 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 159 moveto
+256 149 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 145 moveto
+263 145 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 149 moveto
+259 145 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 163 moveto
+252 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 163 moveto
+256 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 321 moveto
+266 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 325 moveto
+266 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+266 325 moveto
+274 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+274 325 moveto
+270 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+270 325 moveto
+299 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 325 moveto
+263 321 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 321 moveto
+263 314 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 224 moveto
+266 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 228 moveto
+266 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+266 228 moveto
+270 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+270 228 moveto
+295 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 228 moveto
+263 224 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 224 moveto
+263 217 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 159 moveto
+266 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 163 moveto
+266 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+266 163 moveto
+270 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+295 163 moveto
+270 163 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 163 moveto
+263 159 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 159 moveto
+263 152 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 195 moveto
+270 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+270 195 moveto
+295 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 195 moveto
+263 185 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 195 moveto
+263 188 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 257 moveto
+266 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 260 moveto
+266 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+266 260 moveto
+299 260 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 260 moveto
+263 257 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 257 moveto
+263 249 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 289 moveto
+266 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+299 293 moveto
+266 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+266 293 moveto
+263 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 293 moveto
+263 289 lineto
+stroke
+2.835000 setlinewidth
+newpath
+263 289 moveto
+263 282 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 293 moveto
+256 289 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 293 moveto
+238 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 293 moveto
+252 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 293 moveto
+256 293 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 293 moveto
+256 289 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 289 moveto
+256 278 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 278 moveto
+259 275 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 275 moveto
+263 275 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 325 moveto
+256 321 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 321 moveto
+256 320 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 361 moveto
+209 361 lineto
+stroke
+2.835000 setlinewidth
+newpath
+230 325 moveto
+238 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 329 moveto
+230 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 343 moveto
+227 329 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 361 moveto
+227 343 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 325 moveto
+252 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 325 moveto
+256 325 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 325 moveto
+256 320 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 320 moveto
+256 311 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 307 moveto
+263 307 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 311 moveto
+259 307 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 249 moveto
+284 242 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 375 moveto
+209 375 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 357 moveto
+238 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 375 moveto
+227 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 357 moveto
+256 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 357 moveto
+256 343 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 343 moveto
+259 339 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 339 moveto
+263 339 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 152 moveto
+284 145 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 185 moveto
+284 177 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 379 moveto
+284 372 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 347 moveto
+284 339 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 314 moveto
+284 307 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 134 moveto
+212 134 lineto
+stroke
+2.835000 setlinewidth
+newpath
+212 134 moveto
+194 134 lineto
+stroke
+2.835000 setlinewidth
+newpath
+284 217 moveto
+284 210 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 390 moveto
+256 386 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 390 moveto
+238 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 390 moveto
+252 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 390 moveto
+256 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 390 moveto
+256 386 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 386 moveto
+256 375 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 372 moveto
+263 372 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 375 moveto
+259 372 lineto
+stroke
+2.835000 setlinewidth
+newpath
+248 134 moveto
+252 134 lineto
+stroke
+2.835000 setlinewidth
+newpath
+396 154 moveto
+396 336 lineto
+stroke
+0.000000 setlinewidth
+newpath
+396 154 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 154 1 1 0 360 ellipse
+stroke
+newpath
+371 154 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 154 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+371 140 moveto
+371 154 lineto
+stroke
+2.835000 setlinewidth
+newpath
+360 129 moveto
+371 140 lineto
+stroke
+2.835000 setlinewidth
+newpath
+257 129 moveto
+360 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 134 moveto
+257 129 lineto
+stroke
+2.835000 setlinewidth
+newpath
+396 411 moveto
+396 336 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 408 moveto
+439 408 lineto
+stroke
+2.835000 setlinewidth
+newpath
+396 417 moveto
+396 411 lineto
+stroke
+2.835000 setlinewidth
+newpath
+400 420 moveto
+396 417 lineto
+stroke
+2.835000 setlinewidth
+newpath
+427 420 moveto
+400 420 lineto
+stroke
+2.835000 setlinewidth
+newpath
+439 408 moveto
+427 420 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 390 moveto
+356 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+306 390 moveto
+320 390 lineto
+stroke
+2.835000 setlinewidth
+newpath
+356 195 moveto
+342 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+342 195 moveto
+338 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 224 moveto
+252 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+209 264 moveto
+227 246 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 264 moveto
+209 264 lineto
+stroke
+2.835000 setlinewidth
+newpath
+230 228 moveto
+238 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 231 moveto
+230 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+227 246 moveto
+227 231 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 228 moveto
+252 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+252 228 moveto
+256 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 228 moveto
+256 224 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 224 moveto
+256 213 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 213 moveto
+259 210 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 210 moveto
+263 210 lineto
+stroke
+2.835000 setlinewidth
+newpath
+194 195 moveto
+238 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+238 195 moveto
+256 195 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 195 moveto
+256 181 lineto
+stroke
+2.835000 setlinewidth
+newpath
+256 181 moveto
+259 177 lineto
+stroke
+2.835000 setlinewidth
+newpath
+259 177 moveto
+263 177 lineto
+stroke
+2.835000 setlinewidth
+newpath
+364 217 moveto
+369 222 lineto
+stroke
+0.000000 setlinewidth
+newpath
+409 222 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+409 222 1 1 0 360 ellipse
+stroke
+newpath
+382 222 1 1 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 222 1 1 0 360 ellipse
+stroke
+2.835000 setlinewidth
+2.835000 setlinewidth
+newpath
+369 222 moveto
+382 222 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 222 moveto
+409 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 347 moveto
+418 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 309 moveto
+409 228 lineto
+stroke
+2.835000 setlinewidth
+newpath
+409 228 moveto
+409 222 lineto
+stroke
+2.835000 setlinewidth
+newpath
+412 312 moveto
+409 309 lineto
+stroke
+2.835000 setlinewidth
+newpath
+412 341 moveto
+412 312 lineto
+stroke
+2.835000 setlinewidth
+newpath
+418 347 moveto
+412 341 lineto
+stroke
+2.835000 setlinewidth
+newpath
+446 357 moveto
+441 357 lineto
+stroke
+2.835000 setlinewidth
+newpath
+430 347 moveto
+418 347 lineto
+stroke
+2.835000 setlinewidth
+newpath
+441 357 moveto
+430 347 lineto
+stroke
+0.000000 setlinewidth
+newpath
+418 411 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 411 2 2 0 360 ellipse
+stroke
+newpath
+396 411 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 411 2 2 0 360 ellipse
+stroke
+newpath
+444 410 moveto
+448 410 lineto
+448 406 lineto
+444 406 lineto
+eofill
+0.000000 setlinewidth
+newpath
+444 410 moveto
+448 410 lineto
+448 406 lineto
+444 406 lineto
+closepath
+stroke
+newpath
+446 401 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 401 2 2 0 360 ellipse
+stroke
+newpath
+446 393 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 393 2 2 0 360 ellipse
+stroke
+newpath
+446 386 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 386 2 2 0 360 ellipse
+stroke
+newpath
+446 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 379 2 2 0 360 ellipse
+stroke
+newpath
+446 372 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 372 2 2 0 360 ellipse
+stroke
+newpath
+446 365 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 365 2 2 0 360 ellipse
+stroke
+newpath
+446 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 357 2 2 0 360 ellipse
+stroke
+newpath
+446 350 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 350 2 2 0 360 ellipse
+stroke
+newpath
+446 343 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+446 343 2 2 0 360 ellipse
+stroke
+newpath
+320 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 390 2 2 0 360 ellipse
+stroke
+newpath
+342 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 390 2 2 0 360 ellipse
+stroke
+newpath
+418 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 347 2 2 0 360 ellipse
+stroke
+newpath
+396 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 347 2 2 0 360 ellipse
+stroke
+newpath
+317 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+317 195 2 2 0 360 ellipse
+stroke
+newpath
+338 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+338 195 2 2 0 360 ellipse
+stroke
+newpath
+418 336 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 336 2 2 0 360 ellipse
+stroke
+newpath
+396 336 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 336 2 2 0 360 ellipse
+stroke
+newpath
+320 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 163 2 2 0 360 ellipse
+stroke
+newpath
+342 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 163 2 2 0 360 ellipse
+stroke
+newpath
+418 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 357 2 2 0 360 ellipse
+stroke
+newpath
+396 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 357 2 2 0 360 ellipse
+stroke
+newpath
+320 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 228 2 2 0 360 ellipse
+stroke
+newpath
+342 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 228 2 2 0 360 ellipse
+stroke
+newpath
+418 368 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 368 2 2 0 360 ellipse
+stroke
+newpath
+396 368 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 368 2 2 0 360 ellipse
+stroke
+newpath
+320 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 260 2 2 0 360 ellipse
+stroke
+newpath
+342 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 260 2 2 0 360 ellipse
+stroke
+newpath
+418 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 379 2 2 0 360 ellipse
+stroke
+newpath
+396 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 379 2 2 0 360 ellipse
+stroke
+newpath
+320 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 293 2 2 0 360 ellipse
+stroke
+newpath
+342 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 293 2 2 0 360 ellipse
+stroke
+newpath
+418 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 390 2 2 0 360 ellipse
+stroke
+newpath
+396 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 390 2 2 0 360 ellipse
+stroke
+newpath
+320 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 325 2 2 0 360 ellipse
+stroke
+newpath
+342 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 325 2 2 0 360 ellipse
+stroke
+newpath
+418 401 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+418 401 2 2 0 360 ellipse
+stroke
+newpath
+396 401 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 401 2 2 0 360 ellipse
+stroke
+newpath
+320 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+320 357 2 2 0 360 ellipse
+stroke
+newpath
+342 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+342 357 2 2 0 360 ellipse
+stroke
+newpath
+253 388 moveto
+253 392 lineto
+258 392 lineto
+258 388 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 388 moveto
+253 392 lineto
+258 392 lineto
+258 388 lineto
+closepath
+stroke
+newpath
+263 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 390 2 2 0 360 ellipse
+stroke
+newpath
+270 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 390 2 2 0 360 ellipse
+stroke
+newpath
+295 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+295 228 2 2 0 360 ellipse
+stroke
+newpath
+302 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+302 228 2 2 0 360 ellipse
+stroke
+newpath
+299 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+299 325 2 2 0 360 ellipse
+stroke
+newpath
+306 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+306 325 2 2 0 360 ellipse
+stroke
+newpath
+295 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+295 195 2 2 0 360 ellipse
+stroke
+newpath
+302 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+302 195 2 2 0 360 ellipse
+stroke
+newpath
+299 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+299 357 2 2 0 360 ellipse
+stroke
+newpath
+306 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+306 357 2 2 0 360 ellipse
+stroke
+newpath
+299 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+299 293 2 2 0 360 ellipse
+stroke
+newpath
+306 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+306 293 2 2 0 360 ellipse
+stroke
+newpath
+299 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+299 390 2 2 0 360 ellipse
+stroke
+newpath
+306 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+306 390 2 2 0 360 ellipse
+stroke
+newpath
+295 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+295 163 2 2 0 360 ellipse
+stroke
+newpath
+302 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+302 163 2 2 0 360 ellipse
+stroke
+newpath
+299 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+299 260 2 2 0 360 ellipse
+stroke
+newpath
+306 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+306 260 2 2 0 360 ellipse
+stroke
+newpath
+354 161 moveto
+354 165 lineto
+358 165 lineto
+358 161 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 161 moveto
+354 165 lineto
+358 165 lineto
+358 161 lineto
+closepath
+stroke
+newpath
+364 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 163 2 2 0 360 ellipse
+stroke
+newpath
+371 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 163 2 2 0 360 ellipse
+stroke
+newpath
+371 185 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 185 2 2 0 360 ellipse
+stroke
+newpath
+364 185 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 185 2 2 0 360 ellipse
+stroke
+newpath
+356 185 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 185 2 2 0 360 ellipse
+stroke
+newpath
+354 193 moveto
+354 197 lineto
+358 197 lineto
+358 193 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 193 moveto
+354 197 lineto
+358 197 lineto
+358 193 lineto
+closepath
+stroke
+newpath
+364 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 195 2 2 0 360 ellipse
+stroke
+newpath
+371 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 195 2 2 0 360 ellipse
+stroke
+newpath
+371 217 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 217 2 2 0 360 ellipse
+stroke
+newpath
+364 217 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 217 2 2 0 360 ellipse
+stroke
+newpath
+356 217 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 217 2 2 0 360 ellipse
+stroke
+newpath
+354 388 moveto
+354 392 lineto
+358 392 lineto
+358 388 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 388 moveto
+354 392 lineto
+358 392 lineto
+358 388 lineto
+closepath
+stroke
+newpath
+364 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 390 2 2 0 360 ellipse
+stroke
+newpath
+371 390 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 390 2 2 0 360 ellipse
+stroke
+newpath
+371 411 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 411 2 2 0 360 ellipse
+stroke
+newpath
+364 411 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 411 2 2 0 360 ellipse
+stroke
+newpath
+356 411 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 411 2 2 0 360 ellipse
+stroke
+newpath
+354 323 moveto
+354 327 lineto
+358 327 lineto
+358 323 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 323 moveto
+354 327 lineto
+358 327 lineto
+358 323 lineto
+closepath
+stroke
+newpath
+364 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 325 2 2 0 360 ellipse
+stroke
+newpath
+371 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 325 2 2 0 360 ellipse
+stroke
+newpath
+371 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 347 2 2 0 360 ellipse
+stroke
+newpath
+364 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 347 2 2 0 360 ellipse
+stroke
+newpath
+356 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 347 2 2 0 360 ellipse
+stroke
+newpath
+354 226 moveto
+354 230 lineto
+358 230 lineto
+358 226 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 226 moveto
+354 230 lineto
+358 230 lineto
+358 226 lineto
+closepath
+stroke
+newpath
+364 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 228 2 2 0 360 ellipse
+stroke
+newpath
+371 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 228 2 2 0 360 ellipse
+stroke
+newpath
+371 249 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 249 2 2 0 360 ellipse
+stroke
+newpath
+364 249 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 249 2 2 0 360 ellipse
+stroke
+newpath
+356 249 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 249 2 2 0 360 ellipse
+stroke
+newpath
+354 355 moveto
+354 359 lineto
+358 359 lineto
+358 355 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 355 moveto
+354 359 lineto
+358 359 lineto
+358 355 lineto
+closepath
+stroke
+newpath
+364 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 357 2 2 0 360 ellipse
+stroke
+newpath
+371 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 357 2 2 0 360 ellipse
+stroke
+newpath
+371 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 379 2 2 0 360 ellipse
+stroke
+newpath
+364 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 379 2 2 0 360 ellipse
+stroke
+newpath
+356 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 379 2 2 0 360 ellipse
+stroke
+newpath
+354 258 moveto
+354 262 lineto
+358 262 lineto
+358 258 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 258 moveto
+354 262 lineto
+358 262 lineto
+358 258 lineto
+closepath
+stroke
+newpath
+364 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 260 2 2 0 360 ellipse
+stroke
+newpath
+371 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 260 2 2 0 360 ellipse
+stroke
+newpath
+371 282 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 282 2 2 0 360 ellipse
+stroke
+newpath
+364 282 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 282 2 2 0 360 ellipse
+stroke
+newpath
+356 282 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 282 2 2 0 360 ellipse
+stroke
+newpath
+354 291 moveto
+354 295 lineto
+358 295 lineto
+358 291 lineto
+eofill
+0.000000 setlinewidth
+newpath
+354 291 moveto
+354 295 lineto
+358 295 lineto
+358 291 lineto
+closepath
+stroke
+newpath
+364 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 293 2 2 0 360 ellipse
+stroke
+newpath
+371 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 293 2 2 0 360 ellipse
+stroke
+newpath
+371 314 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 314 2 2 0 360 ellipse
+stroke
+newpath
+364 314 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 314 2 2 0 360 ellipse
+stroke
+newpath
+356 314 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+356 314 2 2 0 360 ellipse
+stroke
+newpath
+240 226 moveto
+236 226 lineto
+236 230 lineto
+240 230 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 226 moveto
+236 226 lineto
+236 230 lineto
+240 230 lineto
+closepath
+stroke
+newpath
+238 206 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 206 2 2 0 360 ellipse
+stroke
+newpath
+240 258 moveto
+236 258 lineto
+236 262 lineto
+240 262 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 258 moveto
+236 258 lineto
+236 262 lineto
+240 262 lineto
+closepath
+stroke
+newpath
+238 239 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 239 2 2 0 360 ellipse
+stroke
+newpath
+240 388 moveto
+236 388 lineto
+236 392 lineto
+240 392 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 388 moveto
+236 388 lineto
+236 392 lineto
+240 392 lineto
+closepath
+stroke
+newpath
+238 368 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 368 2 2 0 360 ellipse
+stroke
+newpath
+240 161 moveto
+236 161 lineto
+236 165 lineto
+240 165 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 161 moveto
+236 161 lineto
+236 165 lineto
+240 165 lineto
+closepath
+stroke
+newpath
+238 141 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 141 2 2 0 360 ellipse
+stroke
+newpath
+240 291 moveto
+236 291 lineto
+236 295 lineto
+240 295 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 291 moveto
+236 291 lineto
+236 295 lineto
+240 295 lineto
+closepath
+stroke
+newpath
+238 271 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 271 2 2 0 360 ellipse
+stroke
+newpath
+240 323 moveto
+236 323 lineto
+236 327 lineto
+240 327 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 323 moveto
+236 323 lineto
+236 327 lineto
+240 327 lineto
+closepath
+stroke
+newpath
+238 303 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 303 2 2 0 360 ellipse
+stroke
+newpath
+240 193 moveto
+236 193 lineto
+236 197 lineto
+240 197 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 193 moveto
+236 193 lineto
+236 197 lineto
+240 197 lineto
+closepath
+stroke
+newpath
+238 174 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 174 2 2 0 360 ellipse
+stroke
+newpath
+240 355 moveto
+236 355 lineto
+236 359 lineto
+240 359 lineto
+eofill
+0.000000 setlinewidth
+newpath
+240 355 moveto
+236 355 lineto
+236 359 lineto
+240 359 lineto
+closepath
+stroke
+newpath
+238 336 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+238 336 2 2 0 360 ellipse
+stroke
+newpath
+253 258 moveto
+253 262 lineto
+258 262 lineto
+258 258 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 258 moveto
+253 262 lineto
+258 262 lineto
+258 258 lineto
+closepath
+stroke
+newpath
+263 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 260 2 2 0 360 ellipse
+stroke
+newpath
+270 260 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 260 2 2 0 360 ellipse
+stroke
+newpath
+253 226 moveto
+253 230 lineto
+258 230 lineto
+258 226 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 226 moveto
+253 230 lineto
+258 230 lineto
+258 226 lineto
+closepath
+stroke
+newpath
+263 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 228 2 2 0 360 ellipse
+stroke
+newpath
+270 228 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 228 2 2 0 360 ellipse
+stroke
+newpath
+253 193 moveto
+253 198 lineto
+258 198 lineto
+258 193 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 193 moveto
+253 198 lineto
+258 198 lineto
+258 193 lineto
+closepath
+stroke
+newpath
+263 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 195 2 2 0 360 ellipse
+stroke
+newpath
+270 195 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 195 2 2 0 360 ellipse
+stroke
+newpath
+253 161 moveto
+253 165 lineto
+258 165 lineto
+258 161 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 161 moveto
+253 165 lineto
+258 165 lineto
+258 161 lineto
+closepath
+stroke
+newpath
+263 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 163 2 2 0 360 ellipse
+stroke
+newpath
+270 163 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 163 2 2 0 360 ellipse
+stroke
+newpath
+229 136 moveto
+229 132 lineto
+225 132 lineto
+225 136 lineto
+eofill
+0.000000 setlinewidth
+newpath
+229 136 moveto
+229 132 lineto
+225 132 lineto
+225 136 lineto
+closepath
+stroke
+newpath
+248 134 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+248 134 2 2 0 360 ellipse
+stroke
+newpath
+191 199 moveto
+198 199 lineto
+198 192 lineto
+191 192 lineto
+eofill
+0.000000 setlinewidth
+newpath
+191 199 moveto
+198 199 lineto
+198 192 lineto
+191 192 lineto
+closepath
+stroke
+newpath
+194 181 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 181 4 4 0 360 ellipse
+stroke
+newpath
+194 167 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 167 4 4 0 360 ellipse
+stroke
+newpath
+191 296 moveto
+198 296 lineto
+198 289 lineto
+191 289 lineto
+eofill
+0.000000 setlinewidth
+newpath
+191 296 moveto
+198 296 lineto
+198 289 lineto
+191 289 lineto
+closepath
+stroke
+newpath
+194 278 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 278 4 4 0 360 ellipse
+stroke
+newpath
+194 264 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 264 4 4 0 360 ellipse
+stroke
+newpath
+191 393 moveto
+198 393 lineto
+198 386 lineto
+191 386 lineto
+eofill
+0.000000 setlinewidth
+newpath
+191 393 moveto
+198 393 lineto
+198 386 lineto
+191 386 lineto
+closepath
+stroke
+newpath
+194 375 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 375 4 4 0 360 ellipse
+stroke
+newpath
+194 361 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 361 4 4 0 360 ellipse
+stroke
+newpath
+191 138 moveto
+198 138 lineto
+198 131 lineto
+191 131 lineto
+eofill
+0.000000 setlinewidth
+newpath
+191 138 moveto
+198 138 lineto
+198 131 lineto
+191 131 lineto
+closepath
+stroke
+newpath
+194 120 4 4 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+194 120 4 4 0 360 ellipse
+stroke
+newpath
+253 355 moveto
+253 360 lineto
+258 360 lineto
+258 355 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 355 moveto
+253 360 lineto
+258 360 lineto
+258 355 lineto
+closepath
+stroke
+newpath
+263 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 357 2 2 0 360 ellipse
+stroke
+newpath
+270 357 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 357 2 2 0 360 ellipse
+stroke
+newpath
+253 323 moveto
+253 327 lineto
+258 327 lineto
+258 323 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 323 moveto
+253 327 lineto
+258 327 lineto
+258 323 lineto
+closepath
+stroke
+newpath
+263 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 325 2 2 0 360 ellipse
+stroke
+newpath
+270 325 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 325 2 2 0 360 ellipse
+stroke
+newpath
+253 290 moveto
+253 295 lineto
+258 295 lineto
+258 290 lineto
+eofill
+0.000000 setlinewidth
+newpath
+253 290 moveto
+253 295 lineto
+258 295 lineto
+258 290 lineto
+closepath
+stroke
+newpath
+263 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 293 2 2 0 360 ellipse
+stroke
+newpath
+270 293 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+270 293 2 2 0 360 ellipse
+stroke
+newpath
+263 372 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 372 2 2 0 360 ellipse
+stroke
+newpath
+284 372 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 372 2 2 0 360 ellipse
+stroke
+newpath
+263 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 379 2 2 0 360 ellipse
+stroke
+newpath
+284 379 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 379 2 2 0 360 ellipse
+stroke
+newpath
+263 339 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 339 2 2 0 360 ellipse
+stroke
+newpath
+284 339 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 339 2 2 0 360 ellipse
+stroke
+newpath
+263 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 347 2 2 0 360 ellipse
+stroke
+newpath
+284 347 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 347 2 2 0 360 ellipse
+stroke
+newpath
+263 307 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 307 2 2 0 360 ellipse
+stroke
+newpath
+284 307 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 307 2 2 0 360 ellipse
+stroke
+newpath
+263 314 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 314 2 2 0 360 ellipse
+stroke
+newpath
+284 314 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 314 2 2 0 360 ellipse
+stroke
+newpath
+263 275 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 275 2 2 0 360 ellipse
+stroke
+newpath
+284 275 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 275 2 2 0 360 ellipse
+stroke
+newpath
+263 282 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 282 2 2 0 360 ellipse
+stroke
+newpath
+284 282 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 282 2 2 0 360 ellipse
+stroke
+newpath
+263 242 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 242 2 2 0 360 ellipse
+stroke
+newpath
+284 242 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 242 2 2 0 360 ellipse
+stroke
+newpath
+263 249 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 249 2 2 0 360 ellipse
+stroke
+newpath
+284 249 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 249 2 2 0 360 ellipse
+stroke
+newpath
+263 210 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 210 2 2 0 360 ellipse
+stroke
+newpath
+284 210 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 210 2 2 0 360 ellipse
+stroke
+newpath
+263 217 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 217 2 2 0 360 ellipse
+stroke
+newpath
+284 217 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 217 2 2 0 360 ellipse
+stroke
+newpath
+263 145 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 145 2 2 0 360 ellipse
+stroke
+newpath
+284 145 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 145 2 2 0 360 ellipse
+stroke
+newpath
+263 152 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 152 2 2 0 360 ellipse
+stroke
+newpath
+284 152 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 152 2 2 0 360 ellipse
+stroke
+newpath
+263 177 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 177 2 2 0 360 ellipse
+stroke
+newpath
+284 177 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 177 2 2 0 360 ellipse
+stroke
+newpath
+263 185 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+263 185 2 2 0 360 ellipse
+stroke
+newpath
+284 185 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+284 185 2 2 0 360 ellipse
+stroke
+newpath
+379 149 moveto
+384 149 lineto
+384 145 lineto
+379 145 lineto
+eofill
+0.000000 setlinewidth
+newpath
+379 149 moveto
+384 149 lineto
+384 145 lineto
+379 145 lineto
+closepath
+stroke
+newpath
+382 140 2 2 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 140 2 2 0 360 ellipse
+stroke
+0.000000 setlinewidth
+1.00000000 1.00000000 1.00000000 setrgbcolor
+newpath
+403 417 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+403 417 0 0 0 360 ellipse
+stroke
+newpath
+385 417 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+385 417 0 0 0 360 ellipse
+stroke
+newpath
+401 287 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+401 287 0 0 0 360 ellipse
+stroke
+newpath
+382 287 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 287 0 0 0 360 ellipse
+stroke
+newpath
+400 320 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+400 320 0 0 0 360 ellipse
+stroke
+newpath
+382 320 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 320 0 0 0 360 ellipse
+stroke
+newpath
+364 314 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+364 314 0 0 0 360 ellipse
+stroke
+newpath
+400 352 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+400 352 0 0 0 360 ellipse
+stroke
+newpath
+382 352 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 352 0 0 0 360 ellipse
+stroke
+newpath
+401 384 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+401 384 0 0 0 360 ellipse
+stroke
+newpath
+382 384 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 384 0 0 0 360 ellipse
+stroke
+newpath
+409 190 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+409 190 0 0 0 360 ellipse
+stroke
+newpath
+382 190 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 190 0 0 0 360 ellipse
+stroke
+newpath
+405 255 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+405 255 0 0 0 360 ellipse
+stroke
+newpath
+382 255 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 255 0 0 0 360 ellipse
+stroke
+newpath
+396 154 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+396 154 0 0 0 360 ellipse
+stroke
+newpath
+371 154 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+371 154 0 0 0 360 ellipse
+stroke
+newpath
+409 222 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+409 222 0 0 0 360 ellipse
+stroke
+newpath
+382 222 0 0 0 360 ellipse
+fill
+0.000000 setlinewidth
+newpath
+382 222 0 0 0 360 ellipse
+stroke
+showpage
